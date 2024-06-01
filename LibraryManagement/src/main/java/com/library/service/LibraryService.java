@@ -11,4 +11,6 @@ public interface LibraryService {
 
 	List<LibraryDTO> getAllBooks();
 
+	LibraryDTO updateBook(Long book_id, LibraryDTO libraryDto);
+
 }
