@@ -24,4 +24,12 @@ public class LibraryServiceImplementation implements LibraryService {
 		return savedBookDto;
 	}
 
+	@Override
+	public LibraryDTO getBookById(Long book_id) {
+		libraryRepository.findById(book_id).orElseThrow(() -> new RuntimeException("Book not found!"));
+		LibraryDTO libraryDto = new LibraryDTO();
+		BeanUtils.copyProperties(book_id, libraryDto);
+		return libraryDto;
+	}
+
 }
