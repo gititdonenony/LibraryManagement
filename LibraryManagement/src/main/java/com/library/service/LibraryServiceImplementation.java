@@ -56,4 +56,10 @@ public class LibraryServiceImplementation implements LibraryService {
 		return updatedBookDto;
 	}
 
+	@Override
+	public void DeleteBook(Long book_id) {
+		libraryRepository.deleteById(book_id);
+		
+	}
+
 }

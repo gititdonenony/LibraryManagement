@@ -13,4 +13,6 @@ public interface LibraryService {
 
 	LibraryDTO updateBook(Long book_id, LibraryDTO libraryDto);
 
+	void DeleteBook(Long book_id);
+
 }
