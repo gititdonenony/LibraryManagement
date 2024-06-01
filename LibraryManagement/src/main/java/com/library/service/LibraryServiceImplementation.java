@@ -1,5 +1,8 @@
 package com.library.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +33,16 @@ public class LibraryServiceImplementation implements LibraryService {
 		LibraryDTO libraryDto = new LibraryDTO();
 		BeanUtils.copyProperties(book_id, libraryDto);
 		return libraryDto;
+	}
+
+	@Override
+	public List<LibraryDTO> getAllBooks() {
+		List<LibraryEntity> books = libraryRepository.findAll();
+		return books.stream().map(book -> {
+			LibraryDTO libraryDto = new LibraryDTO();
+			BeanUtils.copyProperties(book, libraryDto);
+			return libraryDto;
+		}).collect(Collectors.toList());
 	}
 
 }

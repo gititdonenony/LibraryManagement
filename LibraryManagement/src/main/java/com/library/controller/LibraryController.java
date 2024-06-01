@@ -1,5 +1,7 @@
 package com.library.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +27,11 @@ public class LibraryController {
 	@GetMapping("/{book_id}")
 	public LibraryDTO getBookById(@PathVariable Long book_id) {
 		return libraryService.getBookById(book_id);
+	}
+
+	@GetMapping("/books")
+	public List<LibraryDTO> getAllBooks() {
+		return libraryService.getAllBooks();
 	}
 
 }
