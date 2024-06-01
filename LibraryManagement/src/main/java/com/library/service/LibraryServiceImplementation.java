@@ -27,6 +27,7 @@ public class LibraryServiceImplementation implements LibraryService {
 		return savedBookDto;
 	}
 
+	// Not Executing
 	@Override
 	public LibraryDTO getBookById(Long book_id) {
 		libraryRepository.findById(book_id).orElseThrow(() -> new RuntimeException("Book not found!"));
@@ -59,7 +60,7 @@ public class LibraryServiceImplementation implements LibraryService {
 	@Override
 	public void DeleteBook(Long book_id) {
 		libraryRepository.deleteById(book_id);
-		
+
 	}
 
 }

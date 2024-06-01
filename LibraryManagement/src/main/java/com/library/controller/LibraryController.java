@@ -25,7 +25,7 @@ public class LibraryController {
 	public LibraryDTO createBook(@RequestBody LibraryDTO libraryDto) {
 		return libraryService.createBook(libraryDto);
 	}
-
+//Not Executing
 	@GetMapping("/{book_id}")
 	public LibraryDTO getBookById(@PathVariable Long book_id) {
 		return libraryService.getBookById(book_id);
